@@ -36,9 +36,7 @@ public class Game {
             field.setState(row, column, State.HIT);
             for (int r = row - 1; r <= row + 1; r++) {
                 for (int c = column - 1; c <= column + 1; c++) {
-                    if (!((r < 0 || r > field.getSize())
-                            && (c < 0 || c > field.getSize()))
-                            ) {
+                    if (!((r < 0 || r > field.getSize() - 1) || (c < 0 || c > field.getSize() - 1))) {
                         if (field.getState(r, c) == State.SHIP)
                             field.setState(r, c, State.HIT);
                     }

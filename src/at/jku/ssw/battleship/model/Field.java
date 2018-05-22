@@ -13,8 +13,8 @@ public class Field {
   }
 
   public State getState(int row, int column) {
-    if((row > grid.length || row == -1) ||
-            (column > grid.length || column == -1))return State.FREE;
+    if((row > grid.length || row < 0) ||
+            (column > grid.length || column < 0))return State.FREE;
     return grid[row][column];
   }
 
